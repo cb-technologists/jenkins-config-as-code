@@ -1,0 +1,11 @@
+jenkins:
+  systemMessage: "app-store-demo Pipeline stored as code"
+jobs:
+  - >
+      multibranchPipelineJob('app-store-demo') {
+        branchSources {
+          git {
+            remote('https://github.com/mdelgin/app-store-demo.git')
+          }
+        }
+      }
