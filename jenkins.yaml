@@ -1,11 +1,11 @@
 jenkins:
-  systemMessage: "app-store-demo Pipeline stored as code"
+  systemMessage: "Pipeline Job stored as code"
 jobs:
   - >
-      multibranchPipelineJob('app-store-demo') {
+      multibranchPipelineJob('jenkins-config-as-code-job') {
         branchSources {
           git {
-            remote('https://github.com/mdelgin/app-store-demo.git')
+            remote('https://github.com/mdelgin/jenkins-config-as-code.git')
           }
         }
       }
