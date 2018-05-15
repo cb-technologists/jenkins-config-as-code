@@ -2,11 +2,12 @@ jenkins:
   systemMessage: "Simple Multibranch Pipeline Job stored as code"
 jobs:
   - >
-      multibranchPipelineJob('jenkins-config-as-code-job') {
+      multibranchPipelineJob('ui-jenkins-config-as-code-job') {
         branchSources {
-          github {
-            repoOwner('mdelgin')
-            repository('jenkins-config-as-code')
+          git {
+            id('jenkins-casc-branchSource')
+            remote('https://github.com/mdelgin/jenkins-config-as-code.git')
+            includes('*')
           }
         }
       }
