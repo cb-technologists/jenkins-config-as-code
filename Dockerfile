@@ -19,4 +19,4 @@ ADD https://raw.githubusercontent.com/jenkinsci/docker/master/install-plugins.sh
 RUN chmod +x /usr/local/bin/install-plugins.sh
 ADD https://raw.githubusercontent.com/jenkinsci/docker/master/jenkins-support /usr/local/bin/jenkins-support
 RUN chmod +x /usr/local/bin/jenkins-support
-RUN /usr/local/bin/install-plugins.sh configuration-as-code workflow-multibranch:2.9.2
+RUN /usr/local/bin/install-plugins.sh configuration-as-code workflow-multibranch:2.9.2 git github-branch-source pipeline-model-definition
