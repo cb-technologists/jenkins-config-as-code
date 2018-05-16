@@ -3,7 +3,7 @@ Simple demo of the [Jenkins Configuration as Code plugin](https://github.com/jen
 
 ## How to run
 
-### Locally
+### Locally (CloudBees Jenkins Team)
 1. Ensure the Dockerfile parent image is set to `FROM cloudbees/cloudbees-jenkins-team:2.107.2.1`.
 2. Run the `build-and-run.sh` script from the project root directory.
 
