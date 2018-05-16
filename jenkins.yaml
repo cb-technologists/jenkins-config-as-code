@@ -1,5 +1,13 @@
 jenkins:
   systemMessage: "Simple Multibranch Pipeline Job stored as code"
+  globalLibraries:
+    libraries:
+      - name: "beedemo-pipeline-shared-library"
+        retriever:
+          modernSCM:
+            scm:
+              git:
+                remote: "https://github.com/beedemo/workflowLibs.git"
 jobs:
   - >
       multibranchPipelineJob('jenkins-config-as-code-job') {
