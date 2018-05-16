@@ -2,6 +2,8 @@
 FROM cloudbees/cloudbees-jenkins-team:2.107.2.1
 #FROM cloudbees/cje-mm:2.107.2.1
 
+LABEL maintainer "melgin@cloudbees.com"
+
 USER root
 
 # add config file to jenkins_home
