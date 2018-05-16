@@ -1,6 +1,6 @@
-# FROM cloudbees/cje-mm:2.107.2.1
+FROM cloudbees/cje-mm:2.107.2.1
 #FROM jenkinsci/jenkins
-FROM cloudbees/cloudbees-jenkins-team:2.107.2.1
+#FROM cloudbees/cloudbees-jenkins-team:2.107.2.1
 
 USER root
 
