@@ -1,13 +1,14 @@
 jenkins:
-  systemMessage: "Simple Multibranch Pipeline Job stored as code"
+  systemMessage: "Jenkins configured as code!"
+unclassified:
   globalLibraries:
     libraries:
-      - name: "beedemo-pipeline-shared-library"
+      - name: "cloudy-demos-shared-library"
         retriever:
           modernSCM:
             scm:
               git:
-                remote: "https://github.com/beedemo/workflowLibs.git"
+                remote: "https://github.com/cloudy-demos/pipeline-libraries.git"
 jobs:
   - >
       multibranchPipelineJob('jenkins-config-as-code-job') {
