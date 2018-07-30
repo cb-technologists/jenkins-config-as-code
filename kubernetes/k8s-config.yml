@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: jenkins-configuration-as-code
+data:
+  configuration-as-code.yaml: |
+    jenkins:
+      systemMessage: "Jenkins in Kubernetes configured as code!"
+      location:
+        url: http://jenkins/
+      clouds:
+        - kubernetes:
+            name: kubernetes
+            containerCapStr: 100
+            templates:
+              - name: jnlp-agent
+                label: jnlp-agent-pod-template
+                containers:
+                  - name: jnlp-agent
+                    image: jenkins/jnlp-slave:latest
+                    ttyEnabled: true
+                    command: cat
+                    args: ""
+    jobs:
+      - >
+        pipelineJob('k8s-configuration-as-code') {
+              definition {
+                  cps {
+                      sandbox()
+                      script("""
+                        node('jnlp-agent-pod-template') {
+                          stage('Environment') {
+                            sh "env"
+                          }
+                        }
+                      """.stripIndent())
+                  }
+              }
+          }
